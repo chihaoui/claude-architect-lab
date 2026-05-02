@@ -1,0 +1,15 @@
+{
+    "hooks": {
+        "PostToolUse": [
+            {
+                "matcher": "Edit|Write",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "cd $CLAUDE_PROJECT_DIR && npx eslint --fix \"$CLAUDE_TOOL_INPUT_FILE\" 2>/dev/null || true"
+                    }
+                ]
+            }
+        ]
+    }
+}
